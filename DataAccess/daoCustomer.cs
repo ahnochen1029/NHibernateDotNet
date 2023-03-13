@@ -14,9 +14,6 @@ namespace NHibernateDotNet.DataAccess
 
         public void CreateCustomer(Customer customer)
         {
-            Console.WriteLine("AAAAAAAAAAAAAAAAAAAAA");
-            Console.WriteLine(customer.FirstName);
-            Console.WriteLine(customer.LastName);
             _session.Save(customer);
             _session.Flush();
         }
@@ -25,9 +22,9 @@ namespace NHibernateDotNet.DataAccess
             _session.Update(customer);
             _session.Flush();
         }
-        public void DeleteCustomer(int id)
+        public void DeleteCustomer(Customer customer)
         {
-            _session.Delete(id);
+            _session.Delete(customer);
             _session.Flush();
         }
         public Customer GetCustomerById(int id)

@@ -53,13 +53,13 @@ namespace NHibernateDotNet.Controllers
         }
 
         // delete customer
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete]
+        public void Delete(Customer customer)
         {
             using (var session = helper.GetSession())
             {
                 daoCustomer daoCustomers = new daoCustomer(session);
-                daoCustomers.DeleteCustomer(id);
+                daoCustomers.DeleteCustomer(customer);
             }
         }
 
