@@ -3,11 +3,11 @@
    assembly="NHibernateDotNet"
    namespace="NHibernateDotNet.Models">
 
-	<class name ="Customer">
+	<class name ="Customer" table="Customer">
 		<id name="Id" column ="Id">
-			<generator class ="native"/>
+			<generator class ="identity"/>
 		</id>
-		<property name ="FirstName"/>
-		<property name ="LastName"/>
+		<property name ="FirstName" not-null="true"/>
+		<property name ="LastName" not-null="true"/>
 	</class>
 </hibernate-mapping>

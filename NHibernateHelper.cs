@@ -1,5 +1,6 @@
 ﻿using NHibernate;
 using NHibernate.Cfg;
+using NHibernateDotNet.Models;
 
 
 namespace NHibernateDotNet
@@ -11,6 +12,7 @@ namespace NHibernateDotNet
         {
             var configuration = new Configuration();
             configuration.Configure("hibernate.cfg.xml");
+            configuration.AddAssembly(typeof(Customer).Assembly);
             _sessionFactory = configuration.BuildSessionFactory();
         }
 
