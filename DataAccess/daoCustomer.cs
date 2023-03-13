@@ -35,6 +35,10 @@ namespace NHibernateDotNet.DataAccess
             return _session.Get<Customer>(id);
         }
 
+        public IList<Customer> GetCustomers()
+        {
+            return _session.Query<Customer>().ToList();
+        }
     }
 
 }
